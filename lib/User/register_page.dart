@@ -1,54 +1,46 @@
 import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:medhealth/network/api/url_api.dart';
-import 'package:medhealth/network/model/pref_profile_model.dart';
-import 'package:medhealth/pages/Admin/admin_home_page.dart';
-import 'package:medhealth/pages/Admin/admin_main_page.dart';
-import 'package:medhealth/pages/register_page.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import '../main_page.dart';
-import '../theme.dart';
-import '../widget/button_primary.dart';
-import '../widget/general_logo_space.dart';
+import 'package:medhealth/User/login_page.dart';
+import 'package:medhealth/widget/button_primary.dart';
+import 'package:medhealth/widget/general_logo_space.dart';
+import 'package:medhealth/theme.dart';
 import 'package:http/http.dart' as http;
 
-class LoginPages extends StatefulWidget {
-  const LoginPages({super.key});
+class RegisterPages extends StatefulWidget {
+  const RegisterPages({super.key});
 
   @override
-  State<LoginPages> createState() => _LoginPagesState();
+  State<RegisterPages> createState() => _RegisterPagesState();
 }
 
-class _LoginPagesState extends State<LoginPages> {
+class _RegisterPagesState extends State<RegisterPages> {
+  TextEditingController fullnameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-
   bool _secureText = true;
-
-  showHide() {
+  void showHide() {
     setState(() {
       _secureText = !_secureText;
     });
   }
 
-  submitLogin() async {
-    var urlLogin = Uri.parse(BASEURL.apiLogin);
-    final response = await http.post(urlLogin, body: {
+  registerSubmit() async {
+    var registerUrl = Uri.parse(BASEURL.apiRegister);
+    final response = await http.post(registerUrl, body: {
+      "fullname": fullnameController.text,
       "email": emailController.text,
-      "password": passwordController.text
+      "phone": phoneController.text,
+      "address": addressController.text,
+      "password": passwordController.text,
     });
     final data = jsonDecode(response.body);
     int value = data['value'];
     String message = data['message'];
-    String idUser = data['user_id'];
-    String name = data['name'];
-    String email = data['email'];
-    String phone = data['phone'];
-    String address = data['address'];
-    String createdAt = data['created_at'];
-    bool isAdmin = data['is_admin'];
     if (value == 1) {
-      savePref(idUser, name, email, phone, address, createdAt);
       showDialog(
           context: context,
           builder: (context) => AlertDialog(
@@ -60,8 +52,7 @@ class _LoginPagesState extends State<LoginPages> {
                         Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    isAdmin ? AdminMainPages() : MainPages()),
+                                builder: (context) => LoginPages()),
                             (route) => false);
                       },
                       child: Text("Ok"))
@@ -82,21 +73,8 @@ class _LoginPagesState extends State<LoginPages> {
                       child: Text("Ok"))
                 ],
               ));
-      setState(() {});
     }
-  }
-
-  savePref(String idUser, String name, String email, String phone,
-      String address, String createdAt) async {
-    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    setState(() {
-      sharedPreferences.setString(PrefProfile.idUser, idUser);
-      sharedPreferences.setString(PrefProfile.name, name);
-      sharedPreferences.setString(PrefProfile.email, email);
-      sharedPreferences.setString(PrefProfile.phone, phone);
-      sharedPreferences.setString(PrefProfile.address, address);
-      sharedPreferences.setString(PrefProfile.createdAt, createdAt);
-    });
+    setState(() {});
   }
 
   @override
@@ -116,18 +94,15 @@ class _LoginPagesState extends State<LoginPages> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: 100,
-                ),
                 Text(
-                  "LOGIN",
+                  "REGISTER",
                   style: regularTextStyle.copyWith(fontSize: 25),
                 ),
                 SizedBox(
                   height: 8,
                 ),
                 Text(
-                  "Login into your account",
+                  "Register your new account",
                   style: regularTextStyle.copyWith(
                       fontSize: 15, color: greyLightColor),
                 ),
@@ -151,10 +126,88 @@ class _LoginPagesState extends State<LoginPages> {
                       color: whiteColor),
                   width: MediaQuery.of(context).size.width,
                   child: TextField(
+                    controller: fullnameController,
+                    decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Full Name",
+                        hintStyle: lightTextStyle.copyWith(
+                            fontSize: 15, color: greyLightColor)),
+                  ),
+                ),
+                SizedBox(
+                  height: 24,
+                ),
+                Container(
+                  padding: EdgeInsets.only(left: 16),
+                  height: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Color(0x40000000),
+                            offset: Offset(0, 1),
+                            blurRadius: 4,
+                            spreadRadius: 0)
+                      ],
+                      color: whiteColor),
+                  width: MediaQuery.of(context).size.width,
+                  child: TextField(
                     controller: emailController,
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: "Email Address",
+                        hintStyle: lightTextStyle.copyWith(
+                            fontSize: 15, color: greyLightColor)),
+                  ),
+                ),
+                SizedBox(
+                  height: 24,
+                ),
+                Container(
+                  padding: EdgeInsets.only(left: 16),
+                  height: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Color(0x40000000),
+                            offset: Offset(0, 1),
+                            blurRadius: 4,
+                            spreadRadius: 0)
+                      ],
+                      color: whiteColor),
+                  width: MediaQuery.of(context).size.width,
+                  child: TextField(
+                    controller: phoneController,
+                    decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Phone",
+                        hintStyle: lightTextStyle.copyWith(
+                            fontSize: 15, color: greyLightColor)),
+                  ),
+                ),
+                SizedBox(
+                  height: 24,
+                ),
+                Container(
+                  padding: EdgeInsets.only(left: 16),
+                  height: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Color(0x40000000),
+                            offset: Offset(0, 1),
+                            blurRadius: 4,
+                            spreadRadius: 0)
+                      ],
+                      color: whiteColor),
+                  width: MediaQuery.of(context).size.width,
+                  child: TextField(
+                    controller: addressController,
+                    decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Home Address",
                         hintStyle: lightTextStyle.copyWith(
                             fontSize: 15, color: greyLightColor)),
                   ),
@@ -204,9 +257,12 @@ class _LoginPagesState extends State<LoginPages> {
                 Container(
                   width: MediaQuery.of(context).size.width,
                   child: ButtonPrimary(
-                    text: "LOGIN",
+                    text: "REGISTER",
                     onTap: () {
-                      if (emailController.text.isEmpty ||
+                      if (fullnameController.text.isEmpty ||
+                          emailController.text.isEmpty ||
+                          phoneController.text.isEmpty ||
+                          addressController.text.isEmpty ||
                           passwordController.text.isEmpty) {
                         showDialog(
                             context: context,
@@ -222,7 +278,7 @@ class _LoginPagesState extends State<LoginPages> {
                                   ],
                                 ));
                       } else {
-                        submitLogin();
+                        registerSubmit();
                       }
                     },
                   ),
@@ -234,7 +290,7 @@ class _LoginPagesState extends State<LoginPages> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Don't have an account ?",
+                      "Already have an account ?",
                       style: lightTextStyle.copyWith(
                           color: greyLightColor, fontSize: 15),
                     ),
@@ -243,11 +299,11 @@ class _LoginPagesState extends State<LoginPages> {
                         Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => RegisterPages()),
+                                builder: (context) => LoginPages()),
                             (route) => false);
                       },
                       child: Text(
-                        "Create account",
+                        "Login now",
                         style: boldTextStyle.copyWith(
                             color: greenColor, fontSize: 15),
                       ),

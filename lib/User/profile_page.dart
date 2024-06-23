@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:medhealth/network/model/pref_profile_model.dart';
-import 'package:medhealth/pages/login_page.dart';
+import 'package:medhealth/User/login_page.dart';
 import 'package:medhealth/theme.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

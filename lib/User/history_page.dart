@@ -8,7 +8,6 @@ import 'package:medhealth/widget/card_history.dart';
 import 'package:medhealth/widget/widget_ilustration_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
-
 import '../theme.dart';
 
 class HistoryPage extends StatefulWidget {

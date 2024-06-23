@@ -6,7 +6,7 @@ import 'package:medhealth/main_page.dart';
 import 'package:medhealth/network/api/url_api.dart';
 import 'package:medhealth/network/model/cart_model.dart';
 import 'package:medhealth/network/model/pref_profile_model.dart';
-import 'package:medhealth/pages/success_checkout.dart';
+import 'package:medhealth/User/success_checkout.dart';
 import 'package:medhealth/widget/button_primary.dart';
 import 'package:medhealth/widget/widget_ilustration_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';

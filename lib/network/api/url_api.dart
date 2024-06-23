@@ -17,4 +17,6 @@ class BASEURL {
   static String checkout = "http://$ipAddress/medhealth_db/check_out.php";
   static String apiHistory =
       "http://$ipAddress/medhealth_db/get_history.php?id_user=";
+  static String apiAdminHistory =
+      "http://$ipAddress/medhealth_db/admin_history.php";
 }

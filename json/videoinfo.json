@@ -1,27 +1,27 @@
 [
     {
       "title": "What is Nosocomephobia?",
-      "time": "45 seconds",
-      "thumbnail": "assets/img_vitamins.png",
-      "videoUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4"
+      "time": "93 seconds",
+      "thumbnail": "assets/video1.png",
+      "videoUrl": "https://raw.githubusercontent.com/Rydberg1102/medhealthV2/main/assets/video1.mp4"
     },
     {
       "title": "Fear of Hospitals, Nosocomephobia",
       "time": "55 seconds",
-      "thumbnail": "assets/img_vitamins.png",
-      "videoUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4"
+      "thumbnail": "assets/video2.png",
+      "videoUrl": "https://raw.githubusercontent.com/Rydberg1102/medhealthV2/main/assets/video2.mp4"
     },
     {
-      "title": "Nosocomephobia Phobias Fears and Anxieties",
+      "title": "Nosocomephobia Fears and Anxieties",
       "time": "60 seconds",
-      "thumbnail": "assets/img_vitamins.png",
-      "videoUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4"
+      "thumbnail": "assets/video3.png",
+      "videoUrl": "https://raw.githubusercontent.com/Rydberg1102/medhealthV2/main/assets/video3.mp4"
     },
     {
       "title": "Sunset",
-      "time": "120 seconds",
-      "thumbnail": "assets/img_vitamins.png",
-      "videoUrl": "https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4"
+      "time": "15 seconds",
+      "thumbnail": "assets/sunset.png",
+      "videoUrl": "https://raw.githubusercontent.com/Rydberg1102/medhealthV2/main/assets/sunset.mp4"
     }
   
   ]

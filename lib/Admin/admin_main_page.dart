@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:medhealth/pages/Admin/admin_history_page.dart';
-import 'package:medhealth/pages/Admin/admin_home_page.dart';
-import 'package:medhealth/pages/Admin/admin_info_page.dart';
-import 'package:medhealth/pages/Admin/admin_profile_page.dart';
+import 'package:medhealth/Admin/admin_history_page.dart';
+import 'package:medhealth/Admin/admin_home_page.dart';
+import 'package:medhealth/Admin/admin_info_page.dart';
+import 'package:medhealth/Admin/admin_profile_page.dart';
 
 class AdminMainPages extends StatefulWidget {
   const AdminMainPages({super.key});

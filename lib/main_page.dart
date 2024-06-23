@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:medhealth/pages/history_page.dart';
-import 'package:medhealth/pages/home_page.dart';
-import 'package:medhealth/pages/info_page.dart';
-import 'package:medhealth/pages/profile_page.dart';
+import 'package:medhealth/User/history_page.dart';
+import 'package:medhealth/User/home_page.dart';
+import 'package:medhealth/User/info_page.dart';
+import 'package:medhealth/User/profile_page.dart';
 
 class MainPages extends StatefulWidget {
   const MainPages({super.key});

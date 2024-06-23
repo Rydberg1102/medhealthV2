@@ -593,7 +593,7 @@ class _InfoPageState extends State<InfoPage> {
                 children: [
                   Text(
                     videoInfo[index]["title"],
-                    style: boldTextStyle.copyWith(fontSize: 18),
+                    style: boldTextStyle.copyWith(fontSize: 13),
                   ),
                   SizedBox(
                     height: 10,
