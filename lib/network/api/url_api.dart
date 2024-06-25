@@ -21,4 +21,8 @@ class BASEURL {
       "http://$ipAddress/medhealth_db/admin_history.php";
   static String apiAdminAddProduct =
       "http://$ipAddress/medhealth_db/admin_upload_product.php";
+  static String apiAdminDeleteProduct =
+      "http://$ipAddress/medhealth_db/admin_delete_product.php";
+  static String apiAdminEditProduct =
+      "http://$ipAddress/medhealth_db/admin_edit_product.php";
 }

@@ -5,6 +5,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:http/http.dart' as http;
 import 'package:medhealth/Admin/admin_add_product.dart';
+import 'package:medhealth/Admin/admin_detail_product.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../User/cart_pages.dart';
@@ -261,7 +262,7 @@ class _AdminHomePageState extends State<AdminHomePage> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      DetailProduct(productModel: y)));
+                                      AdminDetailProduct(productModel: y)));
                         },
                         child: CardProduct(
                           nameProduct: y.nameProduct,
@@ -286,7 +287,7 @@ class _AdminHomePageState extends State<AdminHomePage> {
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
-                                  DetailProduct(productModel: y)));
+                                  AdminDetailProduct(productModel: y)));
                     },
                     child: CardProduct(
                       imageProduct: y.imageProduct,

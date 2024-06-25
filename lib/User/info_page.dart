@@ -623,7 +623,7 @@ class _InfoPageState extends State<InfoPage> {
                 ),
                 child: Center(
                   child: Text(
-                    "15s rest",
+                    "15s wait",
                     style: TextStyle(color: Color(0xFF839fed)),
                   ),
                 ),
