@@ -19,4 +19,6 @@ class BASEURL {
       "http://$ipAddress/medhealth_db/get_history.php?id_user=";
   static String apiAdminHistory =
       "http://$ipAddress/medhealth_db/admin_history.php";
+  static String apiAdminAddProduct =
+      "http://$ipAddress/medhealth_db/admin_upload_product.php";
 }

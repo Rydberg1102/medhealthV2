@@ -121,37 +121,21 @@ class _AdminHomePageState extends State<AdminHomePage> {
             ),
             Stack(
               children: [
-                IconButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => AdminAddProduct()));
-                  },
-                  icon: Icon(
-                    Icons.add,
-                    color: greenColor,
+                Padding(
+                  padding: EdgeInsets.only(left: 90),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AdminAddProduct()));
+                    },
+                    icon: Icon(
+                      Icons.add,
+                      color: greenColor,
+                    ),
                   ),
                 ),
-                totalCartt == "0"
-                    ? SizedBox()
-                    : Positioned(
-                        right: 10,
-                        top: 10,
-                        child: Container(
-                          height: 13,
-                          width: 13,
-                          decoration: BoxDecoration(
-                              color: Colors.red,
-                              borderRadius: BorderRadius.circular(30)),
-                          child: Center(
-                              child: Text(
-                            totalCartt,
-                            style: regularTextStyle.copyWith(
-                                color: whiteColor, fontSize: 12),
-                          )),
-                        ),
-                      )
               ],
             ),
             Stack(

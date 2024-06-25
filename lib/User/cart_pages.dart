@@ -223,7 +223,7 @@ class _CartPageState extends State<CartPage> {
                 Text(
                   "My Cart",
                   style: regularTextStyle.copyWith(fontSize: 25),
-                )
+                ),
               ])),
           listCart.length == 0 || listCart.length == null
               ? Container(
