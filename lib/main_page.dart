@@ -57,8 +57,8 @@ class _MainPagesState extends State<MainPages> {
                 text: 'Info',
               ),
               GButton(
-                icon: Icons.settings,
-                text: 'Settings',
+                icon: Icons.person,
+                text: 'Profile',
               ),
             ],
             selectedIndex: _selectIndex,

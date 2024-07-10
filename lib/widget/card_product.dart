@@ -13,7 +13,7 @@ class CardProduct extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final priceFormat = NumberFormat("#,##0", "EN_US");
+    final priceFormat = NumberFormat("###0.00", "EN_US");
     return Container(
       decoration: BoxDecoration(
         color: whiteColor,
@@ -38,7 +38,7 @@ class CardProduct extends StatelessWidget {
             height: 14,
           ),
           Text(
-            "RM" + priceFormat.format(int.parse(price)),
+            "RM" + priceFormat.format(double.parse(price)),
             style: boldTextStyle,
           )
         ],

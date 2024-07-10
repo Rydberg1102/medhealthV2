@@ -53,12 +53,12 @@ class _AdminMainPagesState extends State<AdminMainPages> {
                 text: 'History',
               ),
               GButton(
-                icon: Icons.search,
-                text: 'Search',
+                icon: Icons.newspaper,
+                text: 'Info',
               ),
               GButton(
-                icon: Icons.settings,
-                text: 'Settings',
+                icon: Icons.person,
+                text: 'Profile',
               ),
             ],
             selectedIndex: _selectIndex,

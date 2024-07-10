@@ -128,7 +128,7 @@ class _InfoPageState extends State<InfoPage> {
                                   width: 5,
                                 ),
                                 Text(
-                                  "68 min",
+                                  "12 min",
                                   style: TextStyle(
                                       fontSize: 16, color: whiteColor),
                                 )
@@ -230,21 +230,21 @@ class _InfoPageState extends State<InfoPage> {
                           color: blackColor),
                     ),
                     Expanded(child: Container()),
-                    Row(
-                      children: [
-                        Icon(Icons.loop, size: 30, color: greenColor),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text(
-                          "3 sets",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: greyLightColor,
-                          ),
-                        )
-                      ],
-                    ),
+                    // Row(
+                    //   children: [
+                    //     Icon(Icons.loop, size: 30, color: greenColor),
+                    //     SizedBox(
+                    //       width: 10,
+                    //     ),
+                    //     Text(
+                    //       "3 sets",
+                    //       style: TextStyle(
+                    //         fontSize: 15,
+                    //         color: greyLightColor,
+                    //       ),
+                    //     )
+                    //   ],
+                    // ),
                     SizedBox(
                       width: 20,
                     ),
